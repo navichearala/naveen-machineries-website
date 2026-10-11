@@ -16,7 +16,9 @@ document.querySelectorAll('[data-filter]').forEach(button => button.addEventList
   let count = 0;
   document.querySelectorAll('.product-card').forEach(card => { card.hidden = card.classList.contains('agriculture-specific') ? filter !== 'agriculture' : filter !== 'all' && card.dataset.category !== filter; if(!card.hidden) count++; });
   $('.product-grid').classList.toggle('agriculture-view', filter === 'agriculture');
-  $('.result-count').textContent = filter === 'all' ? 'Showing all 4 solution areas' : filter === 'agriculture' ? 'Agricultural equipment overview + 2 featured products' : `Showing ${count} solution ${count === 1 ? 'area' : 'areas'}`;
+  $('.product-grid').classList.toggle('all-view', filter === 'all');
+  $('.product-grid').classList.toggle('gear-view', filter === 'gears');
+  $('.result-count').textContent = filter === 'all' ? `Showing all ${count} solution areas` : filter === 'agriculture' ? 'Agricultural equipment overview + 2 featured products' : `Showing ${count} solution ${count === 1 ? 'area' : 'areas'}`;
 }));
 const products = {
   agriculture: {label:'AGRICULTURAL IMPLEMENTS',title:'Equipment for the work on your land.',description:'Tractor-connected implements and agricultural equipment for cultivation, transport, corn milling, and sweet corn processing. Explore the featured products below.',items:['Indian tractor ploughs','Agricultural rotavators and Indian tractor cultivators','Tractor trailers and tractor-connected corn mills','Sweet corn seed / kernel separating machines'],solution:'Agricultural implements'},
@@ -24,13 +26,14 @@ const products = {
   sweetcorn: {label:'AGRICULTURE / SWEET CORN PROCESSING',title:'Sweet corn separating machine',description:'A corn seed / kernel separating machine for removing kernels from fresh sweet corn cobs. Tell us about your sweet corn processing application so we can discuss a suitable machine configuration.',items:['Application: separating sweet corn kernels from the cob','Share the corn variety, cob sizes, and required output','Confirm food-contact materials, power supply, cleaning needs, and operating method before ordering'],solution:'Agricultural implements',image:'./assets/sweet-corn-separator.webp',alt:'Concept illustration of a stainless steel machine for separating sweet corn kernels'},
   construction: {label:'CONSTRUCTION MACHINERY',title:'Clay brick-making machine',description:'Clay brick-making equipment for your construction-material production needs. The photograph shows our clay brick-making machine; discuss your required brick dimensions, production process, and output with us to define a suitable configuration.',items:['Clay brick-making machinery','Customised hydraulic clay brick machine enquiries','Earth block making machinery','Machine configuration and specifications confirmed on enquiry'],solution:'Brick & earth block machinery',image:'./assets/clay-brick-machine.webp',alt:'Naveen Machineries orange clay brick-making machine',caption:'Clay brick-making machine. Company-supplied photograph.'},
   precision: {label:'PRECISION COMPONENTS',title:'Your geometry, carefully shaped.',description:'High-precision aluminium shape cutting for custom components, including blade profiles for fans and turbines.',items:['Custom aluminium profiles','Fan blade shapes','Turbine blade shapes','Drawing-based component enquiries'],solution:'Precision aluminium components'},
-  hydraulics: {label:'HYDRAULIC SOLUTIONS',title:'Put hydraulic power to work.',description:'Hydraulic press machinery and hydraulic cylinder work for earth-moving equipment. Share the application and component details for a scope review.',items:['Hydraulic press machines','Earth-moving machinery hydraulic cylinder work','Application-specific hydraulic requirements'],solution:'Hydraulic solutions'}
+  hydraulics: {label:'HYDRAULIC SOLUTIONS',title:'Put hydraulic power to work.',description:'Hydraulic press machinery and hydraulic cylinder work for earth-moving equipment. Share the application and component details for a scope review.',items:['Hydraulic press machines','Earth-moving machinery hydraulic cylinder work','Application-specific hydraulic requirements'],solution:'Hydraulic solutions'},
+  gears: {label:'GEAR PROFILE WORKING',title:'Gear cutting & profile working',description:'Gear machining for machinery components, shaped around your drawing and application. Our gear cutting machine supports enquiries for gear profiles; the required geometry, material, and working capacity are reviewed before confirming the job.',items:['Gear cutting and profile working','Drawing-based review of tooth count, module or pitch, and profile','Confirm gear diameter, face width, bore, and material','Tolerances, finishing requirements, and quantities agreed before manufacture'],solution:'Gear profile working',image:'./assets/gears.webp',alt:'Conceptual photograph of machined steel gears'}
 };
 let selectedSolution = 'Custom manufacturing';
 let selectedProduct = '';
 document.querySelectorAll('[data-product]').forEach(card => card.addEventListener('click', () => {
   const p = products[card.dataset.product]; selectedSolution = p.solution;
-  selectedProduct = ['plough','sweetcorn'].includes(card.dataset.product) ? p.title : '';
+  selectedProduct = ['plough','sweetcorn','gears'].includes(card.dataset.product) ? p.title : '';
   $('#detail-label').textContent=p.label; $('#detail-title').textContent=p.title; $('#detail-description').textContent=p.description;
   $('#detail-figure').hidden = !p.image;
   if (p.image) { $('#detail-image').src=p.image; $('#detail-image').alt=p.alt; $('#detail-figure figcaption').textContent=p.caption || 'Concept illustration. Actual product design and configuration may differ.'; }
@@ -39,6 +42,9 @@ document.querySelectorAll('[data-product]').forEach(card => card.addEventListene
   if(!$('#product-dialog').open) $('#product-dialog').showModal();
   $('#product-dialog').scrollTop = 0;
 }));
+const gearOption = document.createElement('option');
+gearOption.textContent = 'Gear profile working';
+$('#quote-form').elements.solution.add(gearOption);
 function openQuote(solution='Custom manufacturing') {
   $('#quote-form').hidden=false; $('#quote-result').hidden=true;
   $('#quote-form').elements.solution.value=solution;
