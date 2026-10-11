@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Naveen Machineries | Built for the work ahead</title>
+  <meta name="description" content="Agricultural implements, brick-making machinery, precision aluminium cutting and hydraulic solutions from Naveen Machineries.">
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./base.css"><link rel="stylesheet" href="./style.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="header">
+  <a class="brand" href="#" aria-label="Naveen Machineries home">
+    <svg viewBox="0 0 44 44" fill="none" aria-label="Naveen Machineries logo" role="img"><path d="M5 36V8h9l16 21V8h9v28h-9L14 15v21Z" fill="currentColor"/><path d="M5 41h34" stroke="currentColor" stroke-width="2"/></svg>
+    <span>NAVEEN<small>MACHINERIES</small></span>
+  </a>
+  <nav id="navigation" aria-label="Main navigation">
+    <a href="#products">What we make <span>⌄</span></a>
+    <a href="#capabilities">Our capabilities</a>
+    <a href="#about">Who we are</a>
+  </nav>
+  <div class="header-actions">
+    <button id="theme" class="icon-button" aria-label="Switch color theme" title="Switch color theme">◐</button>
+    <a href="#contact" class="button small">Let’s talk <span>↗</span></a>
+    <button id="menu" class="icon-button menu" aria-expanded="false" aria-controls="navigation" aria-label="Toggle navigation">☰</button>
+  </div>
+</header>
+<main id="main">
+  <section class="hero" aria-label="Manufacturing introduction">
+    <img class="hero-image" src="./assets/hero.webp" alt="Conceptual close-up of a plasma cutting machine shaping metal" width="1536" height="1024" fetchpriority="high">
+    <div class="hero-shade"></div>
+    <div class="hero-content">
+      <p class="eyebrow"><span class="status-dot"></span> ENGINEERING PURPOSE. MANUFACTURING POSSIBILITY.</p>
+      <h1>Built for the<br>work <span>ahead.</span></h1>
+      <p class="hero-description">From the fields we cultivate to the machines that move us. Practical manufacturing. Precision in every part.</p>
+      <a class="button" href="#products">Explore our solutions <span>↗</span></a>
+    </div>
+    <div class="hero-bottom"><span>AGRICULTURE &nbsp; / &nbsp; MACHINERY &nbsp; / &nbsp; PRECISION</span><a href="#about">Discover Naveen <span>↓</span></a></div>
+  </section>
+  <section id="about" class="intro section">
+    <div><p class="eyebrow">THIS IS NAVEEN MACHINERIES</p><h2>Real-world challenges.<br><span class="muted">Well-made solutions.</span></h2></div>
+    <div class="intro-copy"><p>We manufacture and supply equipment for agriculture, construction, and industry. From tractor implements and earth block machinery to custom-cut aluminium components, our work starts with what you need to achieve.</p><p>Bringing fabrication, precision machining, and hydraulic work together, we help turn your requirements into equipment and components built for the job.</p><a href="#capabilities" class="text-link">Get to know our capabilities <span>↗</span></a></div>
+  </section>
+  <section id="products" class="products section">
+    <div class="section-heading"><div><p class="eyebrow">WHAT WE MAKE</p><h2>Moving your<br>industry forward.</h2></div><p>Purpose-built equipment and precision components.<br>Explore where we can make a difference.</p></div>
+    <div class="filters" role="group" aria-label="Filter solutions">
+      <button class="active" data-filter="all" aria-pressed="true">All solutions</button><button data-filter="agriculture" aria-pressed="false">Agriculture</button><button data-filter="construction" aria-pressed="false">Construction</button><button data-filter="precision" aria-pressed="false">Precision & hydraulics</button>
+    </div>
+    <div class="product-grid">
+      <button class="product-card" data-category="agriculture" data-product="agriculture"><img src="./assets/agriculture.webp" alt="Conceptual tractor and rotavator in an agricultural field" loading="lazy" width="768" height="432"><span class="card-body"><span class="eyebrow">01 / AGRICULTURE</span><span class="card-title">Built for better<br>groundwork.</span><span class="card-description">Rotavators, cultivators, tractor trailers & corn mills</span><span class="round-arrow" aria-hidden="true">↗</span></span></button>
+      <button class="product-card" data-category="construction" data-product="construction"><img src="./assets/construction.webp" alt="Conceptual hydraulic brick-making equipment and earth blocks" loading="lazy" width="768" height="432"><span class="card-body"><span class="eyebrow">02 / CONSTRUCTION MACHINERY</span><span class="card-title">Shaping what<br>comes next.</span><span class="card-description">Automatic clay brick & earth block making machinery</span><span class="round-arrow" aria-hidden="true">↗</span></span></button>
+      <button class="product-card" data-category="precision" data-product="precision"><img src="./assets/precision.webp" alt="Conceptual precision-cut aluminium fan components" loading="lazy" width="768" height="432"><span class="card-body"><span class="eyebrow">03 / PRECISION COMPONENTS</span><span class="card-title">Every contour.<br>Every detail.</span><span class="card-description">High-precision aluminium shapes, fan & turbine blades</span><span class="round-arrow" aria-hidden="true">↗</span></span></button>
+      <button class="product-card" data-category="precision" data-product="hydraulics"><img src="./assets/hydraulics.webp" alt="Conceptual polished hydraulic cylinders in a workshop" loading="lazy" width="768" height="432"><span class="card-body"><span class="eyebrow">04 / HYDRAULIC SOLUTIONS</span><span class="card-title">Power behind<br>the movement.</span><span class="card-description">Hydraulic presses & earth-moving cylinder work</span><span class="round-arrow" aria-hidden="true">↗</span></span></button>
+    </div>
+    <p class="result-count" aria-live="polite">Showing all 4 solution areas</p>
+  </section>
+  <section id="capabilities" class="capabilities section">
+    <div class="capability-visual"><img src="./assets/hero.webp" alt="Conceptual plasma cutting process" loading="lazy" width="1536" height="1024"><span class="image-label">THE TOOLS BEHIND THE WORK</span></div>
+    <div class="capability-copy"><p class="eyebrow">OUR MANUFACTURING CAPABILITIES</p><h2>The right process.<br>The right result.</h2><p>Cutting, turning, and shaping. Our machining capabilities support both complete equipment and individual custom components.</p>
+      <details open><summary><span>01</span> Plasma cutting <b>+</b></summary><p>Profile cutting for fabricated metal parts and machinery components. Share your drawing, material, and thickness to discuss the right approach.</p></details>
+      <details><summary><span>02</span> Wire EDM <b>+</b></summary><p>Wire electrical discharge machining for detailed profiles and precision shapes in electrically conductive materials. Requirements are reviewed against the part geometry and material.</p></details>
+      <details><summary><span>03</span> CNC turning <b>+</b></summary><p>Lathe machining for turned components, shafts, and cylindrical parts. Our equipment includes an SB-28Y box-way lathe; discuss your drawing and machining needs with us.</p></details>
+      <a class="text-link light" href="#contact">Discuss your manufacturing needs <span>↗</span></a>
+    </div>
+  </section>
+  <section class="approach section">
+    <p class="eyebrow">YOUR REQUIREMENT. OUR STARTING POINT.</p>
+    <div class="section-heading"><h2>From a clear brief<br>to a finished part.</h2><p>Whether you need a complete machine or a custom component,<br>let’s start with the details that matter.</p></div>
+    <div class="steps"><article><span>01</span><h3>Understand the application</h3><p>Tell us what the equipment or component needs to do, and where it will work.</p></article><article><span>02</span><h3>Define the requirements</h3><p>Share drawings, dimensions, materials, quantities, and your target timeline.</p></article><article><span>03</span><h3>Discuss the right solution</h3><p>Review the manufacturing approach and confirm the scope before moving forward.</p></article></div>
+  </section>
+  <section id="contact" class="contact section">
+    <div><p class="eyebrow">LET’S BUILD SOMETHING THAT WORKS.</p><h2>Your next project.<br>Our next conversation.</h2><p>Need an implement, a custom machine, or a precision part?<br>Put your requirements together to start the conversation.</p><p class="contact-note">Business email, phone, and workshop address will be added here.</p></div>
+    <button class="button dark" id="open-quote">Prepare an enquiry <span>↗</span></button>
+  </section>
+</main>
+<footer class="section"><div class="footer-top"><a class="brand" href="#"><svg viewBox="0 0 44 44" fill="none" aria-hidden="true"><path d="M5 36V8h9l16 21V8h9v28h-9L14 15v21Z" fill="currentColor"/><path d="M5 41h34" stroke="currentColor" stroke-width="2"/></svg><span>NAVEEN<small>MACHINERIES</small></span></a><p>Purpose-built machinery.<br>Precisely made possibilities.</p><a href="#products">Our solutions ↗</a><a href="#capabilities">Our capabilities ↗</a><a href="#contact">Get in touch ↗</a></div><div class="footer-bottom"><span>© <span id="year">2026</span> Naveen Machineries.</span><span>Concept imagery. Actual products may differ.</span><a href="#main">Back to top ↑</a></div></footer>
+<dialog id="product-dialog"><button class="close icon-button" aria-label="Close product details">×</button><p class="eyebrow" id="detail-label"></p><h2 id="detail-title"></h2><p id="detail-description"></p><ul id="detail-list"></ul><p class="spec-note">Specifications, available configurations, and suitability are confirmed against your requirements.</p><button id="product-enquiry" class="button">Enquire about this solution <span>↗</span></button></dialog>
+<dialog id="quote-dialog"><button class="close icon-button" aria-label="Close enquiry">×</button><p class="eyebrow">START A CONVERSATION</p><h2>Tell us what you need.</h2><p class="spec-note">Preview mode: this form prepares an enquiry for you to copy. It does not send or store your information.</p><form id="quote-form"><div class="form-row"><label>Your name<input name="name" required autocomplete="name" placeholder="Full name"></label><label>Email address<input name="email" type="email" required autocomplete="email" placeholder="you@company.com"></label></div><label>Solution area<select name="solution"><option>Agricultural implements</option><option>Brick & earth block machinery</option><option>Precision aluminium components</option><option>Hydraulic solutions</option><option>Custom manufacturing</option></select></label><label>Project requirements<textarea name="requirements" required rows="4" placeholder="Tell us about the application, material, dimensions, quantity, and timeline."></textarea></label><button class="button" type="submit">Prepare enquiry <span>↗</span></button></form><div id="quote-result" hidden><h3>Your enquiry is ready to copy.</h3><p>No enquiry has been sent. Once business contact details are added, this can be connected to the company.</p><label>Enquiry text<textarea id="enquiry-text" rows="9" readonly></textarea></label><button class="button" id="select-enquiry">Select enquiry text</button><p id="copy-hint" aria-live="polite"></p></div></dialog>
+</body>
+</html>
