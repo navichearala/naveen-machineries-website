@@ -66,7 +66,13 @@ document.querySelectorAll('dialog').forEach(dialog => {
 $('#quote-form').addEventListener('submit',e=>{
   e.preventDefault(); const data=new FormData(e.target);
   $('#enquiry-text').value=`Enquiry for Naveen Machineries\n\nName: ${data.get('name')}\nEmail: ${data.get('email')}\nSolution: ${data.get('solution')}\n\nProject requirements:\n${data.get('requirements')}`;
-  $('#quote-form').hidden=true; $('#quote-result').hidden=false; $('#copy-hint').textContent=''; $('#select-enquiry').focus();
+  const subject=`Website enquiry: ${data.get('solution')}`;
+  $('#email-enquiry').href=`mailto:Naveenmachineries@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent($('#enquiry-text').value)}`;
+  $('#quote-form').hidden=true; $('#quote-result').hidden=false; $('#copy-hint').textContent=''; $('#email-enquiry').focus();
+});
+$('#edit-enquiry').addEventListener('click',()=>{
+  $('#quote-result').hidden=true; $('#quote-form').hidden=false;
+  $('#quote-form').elements.requirements.focus();
 });
 $('#select-enquiry').addEventListener('click',()=>{
   $('#enquiry-text').focus(); $('#enquiry-text').select();
